@@ -78,6 +78,7 @@
 
 <script>
 export default {
+    middleware: 'auth',
     name: "MyTeams",
     layout: "dashboard",
 }

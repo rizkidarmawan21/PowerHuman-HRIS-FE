@@ -37,6 +37,7 @@
 <script>
 
 export default {
+    middleware: 'auth',
     name: "CreateTeam",
     layout: "form",
 }

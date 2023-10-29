@@ -32,6 +32,7 @@
 
 <script>
 export default {
+    middleware: 'auth',
     name: "CreateRole",
     layout: "form",
 }

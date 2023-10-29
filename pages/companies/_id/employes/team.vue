@@ -98,6 +98,7 @@
 
 <script>
 export default {
+    middleware: 'auth',
     name: "AddEmployeeToTeam",
     layout: "form",
 }

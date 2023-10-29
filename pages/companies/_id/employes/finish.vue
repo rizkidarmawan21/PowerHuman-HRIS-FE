@@ -30,6 +30,7 @@
 
 <script>
 export default {
+    middleware: 'auth',
     name: "CreateEmployee2",
     layout: "form",
 }

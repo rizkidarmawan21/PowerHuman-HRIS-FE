@@ -108,6 +108,7 @@
 
 <script>
 export default {
+    middleware: 'auth',
     name: "Roles",
     layout: "dashboard",
 }
