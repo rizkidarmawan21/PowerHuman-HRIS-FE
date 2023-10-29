@@ -1,5 +1,7 @@
 <template>
-    <NuxtLink :to="url" class="nav-link" :class="[{ 'active': active }]">
+    <NuxtLink :to="url" class="nav-link" :class="[{
+        'active': $route.fullPath == url ? true : false,
+    }]">
         <img :src="icon">
         {{ title }}
     </NuxtLink>

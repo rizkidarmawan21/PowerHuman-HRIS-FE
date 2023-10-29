@@ -4,7 +4,7 @@
             {{ title }}
         </div>
 
-        <SidebarItem v-for="(data, index) in items" :key="index" :title="data.title" :icon="data.icon" :url="data.url" />
+        <SidebarItem v-for="(data, index) in items" :key="index" :title="data.title" :icon="data.icon" :url="data.url" :active="data.active" />
     </div>
 </template>
 

@@ -16,6 +16,7 @@
             </div>
 
             <SidebarItemGroup v-for="(data, index) in sidebarItem" :key="index" :items="data.items" :title="data.title" />
+
         </div>
     </div>
 </template>
@@ -30,28 +31,28 @@ export default {
                     title: 'Daily Use',
                     items: [
                         {
-                            title: 'Overview',
+                            title: `Overview`,
                             icon: '/assets/svgs/ic-grid.svg',
-                            active: true,
-                            url: 'index.html'
+                            active: this.$route.fullPath.split('/')[1] == '' ? true : false,
+                            url: '/'
                         },
                         {
                             title: 'Employees',
                             icon: '/assets/svgs/ic-users.svg',
-                            active: false,
-                            url: 'employees.html'
+                            active: this.$route.fullPath.split('/')[1] == 'employes' ? true : false,
+                            url: '/employes'
                         },
                         {
                             title: 'My Teams',
                             icon: '/assets/svgs/ic-briefcase.svg',
-                            active: false,
-                            url: 'my_teams.html'
+                            active: this.$route.fullPath.split('/')[1] == 'teams' ? true : false,
+                            url: '/teams'
                         },
                         {
                             title: 'Roles',
                             icon: '/assets/svgs/ic-flag.svg',
-                            active: false,
-                            url: 'roles.html'
+                            active: this.$route.fullPath.split('/')[1] == 'roles' ? true : false,
+                            url: '/roles'
                         }
                     ]
                 },
