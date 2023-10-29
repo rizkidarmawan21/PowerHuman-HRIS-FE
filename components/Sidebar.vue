@@ -34,25 +34,25 @@ export default {
                             title: `Overview`,
                             icon: '/assets/svgs/ic-grid.svg',
                             active: this.$route.fullPath.split('/')[1] == '' ? true : false,
-                            url: '/'
+                            url: 'companies-id'
                         },
                         {
                             title: 'Employees',
                             icon: '/assets/svgs/ic-users.svg',
                             active: this.$route.fullPath.split('/')[1] == 'employes' ? true : false,
-                            url: '/employes'
+                            url: 'companies-id-employes'
                         },
                         {
                             title: 'My Teams',
                             icon: '/assets/svgs/ic-briefcase.svg',
                             active: this.$route.fullPath.split('/')[1] == 'teams' ? true : false,
-                            url: '/teams'
+                            url: 'companies-id-teams'
                         },
                         {
                             title: 'Roles',
                             icon: '/assets/svgs/ic-flag.svg',
                             active: this.$route.fullPath.split('/')[1] == 'roles' ? true : false,
-                            url: '/roles'
+                            url: 'companies-id-roles'
                         }
                     ]
                 },
