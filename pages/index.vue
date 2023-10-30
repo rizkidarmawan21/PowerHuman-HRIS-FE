@@ -5,14 +5,15 @@
             <div class="form-group">
                 <label for="" class="text-grey">Companies</label>
 
-                <!-- <p v-if="$fetchState.pending">Fetching companies...</p> -->
-                <select name="companies" id="" class="appearance-none input-field form-icon-chevron_down">
-                    <option>
-                        Select Company
+                <p v-if="$fetchState.pending">Fetching companies...</p>
+                <select v-else v-model="selectedCompany" class="appearance-none input-field form-icon-chevron_down">
+                    <option value="" disabled selected>Select Company</option>
+                    <option :value="data.id" v-for="(data, index) in companies.data.result.data" :key="index">
+                        {{ data.name }}
                     </option>
                 </select>
             </div>
-            <button type="button" class="w-full btn btn-primary mt-[14px]">
+            <button @click="openCompany" class="w-full btn btn-primary mt-[14px]">
                 Continue
             </button>
             <div class="text-center">or</div>
@@ -25,6 +26,20 @@
   
 <script>
 export default {
-    middleware: 'auth'
+    middleware: 'auth',
+    data() {
+        return {
+            companies: [],
+            selectedCompany: ''
+        }
+    },
+    async fetch() {
+        this.companies = await this.$axios.get('/company',)
+    },
+    methods: {
+        openCompany() {
+            this.$router.push({ name: 'companies-id', params: { id: this.selectedCompany } })
+        }
+    }
 }
 </script>
